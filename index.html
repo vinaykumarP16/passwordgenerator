@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PassWOrd generator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/18fc5b7198.js" crossorigin="anonymous"></script>
+	<link rel="shortcut icon" type="image/ico" href="./favicon.ico">
+</head>
+<body>
+	
+		
+		
+			<div class="inputBox">
+				<h1>random password generator</h1>
+
+				<input type="number" placeholder="* length" id="length" required>
+
+				<input type="text" name=""  placeholder="generate password" id="password">
+
+
+				<div id="btn" onclick="getPass()">generate</div>
+				<button id="copy"><i class="fas fa-clipboard"></i></button> <br>
+
+				<br><br>
+				<h6 style="text-align: center;"> * note down the password before using it</h6>
+
+			</div>
+			
+		
+	
+<script type="text/javascript" >
+	function getPass(){
+		var chars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+<>:{}[]";
+		var passwordLen=document.getElementById('length').value;
+		var password="";
+		for (var i=0;i<passwordLen;i++) {
+			var randomNumber=Math.floor(Math.random()*chars.length);
+			password+=chars.substring(randomNumber,randomNumber+1);
+	
+	}
+	document.getElementById('password').value=password; 
+	
+}	
+	
+
+
+
+
+let buttoncopy=document.querySelector('#copy');
+
+buttoncopy.onclick=function () {
+	password.select();
+	document.execCommand("copy");
+	
+	
+}
+	
+</script>
+</body>
+</html>
